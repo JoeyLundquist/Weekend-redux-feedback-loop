@@ -1,12 +1,11 @@
 import { useDispatch } from "react-redux";
-import './Feelings.css'
 import ScoreForm from "../ScoreForm/ScoreForm"
 import { useState } from "react"
 
 
 export default function Feelings() {
     const dispatch = useDispatch();
-    const [feelingsRating, setFeelingsRating] = useState(null)
+    const [feelingsRating, setFeelingsRating] = useState(0)
     const feelings = 'feelings-rating'
     
     const handleNextButton = () => {
