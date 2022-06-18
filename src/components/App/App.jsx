@@ -1,10 +1,12 @@
 import React from 'react';
-import axios from 'axios';
 import './App.css';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
+import ThankYou from '../ThankYou/ThankYou';
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
+
 
 function App() {
 
@@ -22,6 +24,10 @@ function App() {
       <Supported />
 
       <Comments />
+
+      <ThankYou />
+
+      <ReviewFeedback />
 
     </div>
   );
