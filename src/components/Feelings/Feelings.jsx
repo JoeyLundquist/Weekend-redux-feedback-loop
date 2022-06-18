@@ -1,13 +1,20 @@
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 import './Feelings.css'
 import ScoreForm from "../ScoreForm/ScoreForm"
 import { useState } from "react"
 
 
 export default function Feelings() {
+    const dispatch = useDispatch();
     const [feelingsRating, setFeelingsRating] = useState(null)
     const feelings = 'feelings-rating'
     
+    const handleNextButton = () => {
+        dispatch({
+            type: "SET_FEELING_RATING",
+            payload: feelingsRating
+        })
+    }
 
     return (
         <>
@@ -19,6 +26,10 @@ export default function Feelings() {
                 ratingName={feelings}
                 setRatingNumber={setFeelingsRating}
                 />
+
+                <button onClick={handleNextButton}>
+                    Next
+                </button>
                
             </div>  
         </>
