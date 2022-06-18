@@ -5,6 +5,8 @@ import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
+import ThankYou from '../ThankYou/ThankYou';
+
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
       <Supported />
 
       <Comments />
+
+      <ThankYou />
 
     </div>
   );

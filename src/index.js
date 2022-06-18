@@ -6,10 +6,10 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
-import feelingsRating from './Redux/Reducers/Feelings';
-import understandingRating from './Redux/Reducers/understanding';
-import supportedRating from './Redux/Reducers/supported';
-import feedbackComments from './Redux/Reducers/feedback-comments';
+import feelingsRating from './Redux/Reducers/feelingsReducer';
+import understandingRating from './Redux/Reducers/understandingReducer';
+import supportedRating from './Redux/Reducers/supportedReducer';
+import feedbackComments from './Redux/Reducers/feedback-commentsReducer';
 
 
 
