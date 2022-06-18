@@ -9,11 +9,11 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 
-const store = createStore(
-    combineReducers({
+// const store = createStore(
+//     combineReducers({
 
-    }),applyMiddleware(logger)
-);
+//     }),applyMiddleware(logger)
+// );
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
