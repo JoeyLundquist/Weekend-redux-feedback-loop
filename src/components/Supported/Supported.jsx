@@ -10,7 +10,7 @@ export default function Supported() {
     const handleNextButton = () => {
         dispatch({
             type: "SET_SUPPORTED_RATING",
-            payload: supportedRating
+            payload: Number(supportedRating)
         })
     }
 

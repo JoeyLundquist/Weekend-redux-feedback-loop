@@ -11,7 +11,7 @@ export default function Feelings() {
     const handleNextButton = () => {
         dispatch({
             type: "SET_FEELING_RATING",
-            payload: feelingsRating
+            payload: Number(feelingsRating)
         })
     }
 
