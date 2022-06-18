@@ -1,18 +1,29 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ScoreForm from "../ScoreForm/ScoreForm"
 import { useState } from "react"
+import { useHistory } from "react-router-dom";
 
 
 export default function Feelings() {
+    const feeling = useSelector(store => store.feelingsRating)
+    const history = useHistory();
     const dispatch = useDispatch();
     const [feelingsRating, setFeelingsRating] = useState(0)
     const feelings = 'feelings-rating'
     
     const handleNextButton = () => {
+        console.log('Feelings rating?', feeling)
         dispatch({
             type: "SET_FEELING_RATING",
             payload: Number(feelingsRating)
         })
+
+        if(!feelingsRating){
+            alert('Value is needed to proceed')
+        }
+        else{
+            history.push('/1')
+        }
     }
 
     return (
@@ -24,6 +35,7 @@ export default function Feelings() {
                 <ScoreForm 
                 ratingName={feelings}
                 setRatingNumber={setFeelingsRating}
+                reduxState={feeling}
                 />
 
                 <button onClick={handleNextButton}>
