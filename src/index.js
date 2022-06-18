@@ -8,6 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import feelingsRating from './Redux/Reducers/Feelings';
 import understandingRating from './Redux/Reducers/understanding';
+import supportedRating from './Redux/supported';
 
 
 
@@ -16,6 +17,7 @@ const store = createStore(
     combineReducers({
         feelingsRating,
         understandingRating,
+        supportedRating,
     }),applyMiddleware(logger)
 );
 
