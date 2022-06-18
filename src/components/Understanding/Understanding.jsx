@@ -12,7 +12,7 @@ export default function Understanding() {
     const handleNextButton = () => {
         dispatch({
             type: "SET_UNDERSTANDING_RATING",
-            payload: understandingRating
+            payload: Number(understandingRating)
         })
     }
 
