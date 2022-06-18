@@ -1,6 +1,9 @@
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import axios from "axios"
 
 export default function ReviewFeedback() {
+    const dispatch = useDispatch();
+
     const feeling = useSelector(store => store.feelingsRating)
     const understanding = useSelector(store => store.understandingRating)
     const support = useSelector(store => store.supportedRating)
@@ -8,6 +11,18 @@ export default function ReviewFeedback() {
 
     const onSubmit = () => {
 
+
+
+        axios.post('/feedback', {feeling, understanding, support, comments})
+            .then((res) => {
+                console.log('Success', res)
+                dispatch({
+                    type: 'SUBMITTED_CLEAR_STATE',
+                })
+            })
+            .catch((err) => {
+                console.log('Error POSTING', err)
+            })
     }
 
     return (
