@@ -1,10 +1,12 @@
+//Importing needed tools
 import axios from "axios"
 import { DeleteForever } from "@mui/icons-material"
 import FlagIcon from '@mui/icons-material/Flag';
 
-
+//Importing items from list and function to re-render
 export default function AdminListItems({items, fetch}) {
 
+    //Delete route to delete feedback item from DB then re-render
     const deleteFeedbackItem = () => {
         const id = items.id
         console.log(id)
@@ -18,10 +20,11 @@ export default function AdminListItems({items, fetch}) {
                 console.log('DELETE FAILED', err)
             })
     }
-
+    //Put route to do my updates in DB for if the feedback item has been flagged
     const flagFeedbackItem = () => {
         const id = items.id
         let flagged;
+        //Checking if the item is flagged and changing the variable being sent to server to update properly
         if(items.flagged) {
             flagged = {flagged: false}
         }
@@ -42,7 +45,7 @@ export default function AdminListItems({items, fetch}) {
 
     }
 
-
+    //Whats being rendered
     return (
         <>
             <tr>

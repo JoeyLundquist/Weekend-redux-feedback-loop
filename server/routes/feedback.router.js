@@ -1,7 +1,9 @@
+//Importing whats needed for my router
 const express = require('express')
 const feedbackRouter = express.Router();
 const pool = require('../modules/pool')
 
+//Post route to add new feedback to DB
 feedbackRouter.post('/', (req, res) => {
     const sqlQuery = `
         INSERT INTO feedback
@@ -25,6 +27,7 @@ feedbackRouter.post('/', (req, res) => {
         })
 })
 
+//Get routes to load the admin table
 feedbackRouter.get('/', (req, res) => {
     const sqlQuery = `
         SELECT * FROM feedback
@@ -41,6 +44,7 @@ feedbackRouter.get('/', (req, res) => {
         })
 })
 
+//Delete route to remove feedback items for DB
 feedbackRouter.delete('/:id', (req, res) => {
     // console.log(req.params.id)
     const sqlQuery = `
@@ -63,6 +67,7 @@ feedbackRouter.delete('/:id', (req, res) => {
         })
 })
 
+//Put route to Flag feedback items
 feedbackRouter.put('/:id', (req, res) => {
     const id = req.params.id
     const flagged = req.body.flagged

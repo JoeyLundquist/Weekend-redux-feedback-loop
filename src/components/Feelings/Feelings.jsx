@@ -1,18 +1,27 @@
+//Importing needed tools and file
 import { useDispatch, useSelector } from "react-redux";
-import ScoreForm from "../ScoreForm/ScoreForm"
 import { useState } from "react"
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
+import ScoreForm from "../ScoreForm/ScoreForm"
 
 
+//Exported component
 export default function Feelings() {
-    const understanding = useSelector(store => store.understandingRating)
+    //Declaring tools
     const history = useHistory();
     const dispatch = useDispatch();
+
+    //Setting up store and local state
+    const understanding = useSelector(store => store.understandingRating)
     const [feelingsRating, setFeelingsRating] = useState(0)
+    //Setting up radio button names to be passed down to ScoreForm component
     const feelings = 'feelings-rating'
     
+    //This is to validate inputs are there, 
+    //then dispatches state to reducer, 
+    //then move you to next page
     const handleNextButton = () => {
 
         if(!feelingsRating){
@@ -35,6 +44,7 @@ export default function Feelings() {
         }
     }
 
+    //Whats being rendered
     return (
         <>
             <div className="container-for-feedback">

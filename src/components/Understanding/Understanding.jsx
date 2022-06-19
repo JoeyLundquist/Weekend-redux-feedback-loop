@@ -1,19 +1,27 @@
+//Importing needed tools and file
 import { useDispatch, useSelector } from "react-redux";
-import ScoreForm from "../ScoreForm/ScoreForm"
 import { useState } from "react"
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
+import ScoreForm from "../ScoreForm/ScoreForm"
 
+//Exporting Component
 export default function Understanding() {
+    //Declaring tools
     const history = useHistory();
     const dispatch = useDispatch();
 
+    //Setting up local and redux state
     const support = useSelector(store => store.supportedRating)
-
     const [understandingRating, setUnderstandingRating] = useState(0);
+    
+    //Setting up the radio button name to be passed into ScoreForm Component
     const understanding = 'understandingRating'
 
+    //Used for input validation
+    //Dispatch state to reducer
+    //Route to next page
     const handleNextButton = () => {
         
         if(!understandingRating){
@@ -37,6 +45,7 @@ export default function Understanding() {
         }
     }
 
+    //Whats being rendered
     return (
         <>
             <div className="container-for-feedback">
