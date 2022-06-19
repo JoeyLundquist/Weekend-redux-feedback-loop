@@ -41,6 +41,27 @@ feedbackRouter.get('/', (req, res) => {
         })
 })
 
+feedbackRouter.delete('/:id', (req, res) => {
+    console.log(req.params.id)
+    const sqlQuery = `
+        DELETE FROM feedback
+        WHERE id = $1;
+    `
+
+    const sqlParams = [
+        req.params.id
+    ]
+
+    pool.query(sqlQuery, sqlParams)
+        .then(() => {
+            console.log('DELETE success')
+            res.sendStatus(200)
+        })
+        .catch(err => {
+            console.log('DELETE failed', err)
+            res.sendStatus(500)
+        })
+})
 
 
 

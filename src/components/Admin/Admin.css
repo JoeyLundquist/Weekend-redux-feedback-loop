@@ -1,6 +1,6 @@
 .admin-table {
     margin: 20px auto;
-    border: 1px solid black;
+    border: 2px solid blue;
     border-collapse: collapse;
     width: 75%;
     
@@ -18,3 +18,4 @@ tr:nth-child(even) {
     border: 1px solid black;
     border-collapse: collapse;
 }
+

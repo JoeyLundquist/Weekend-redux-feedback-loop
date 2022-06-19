@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react"
 import { useHistory } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 
 
@@ -21,10 +22,11 @@ export default function Comments() {
 
     return (
         <>
-            <div>
+
+            <div className="container-for-feedback">
                 <h3> 4 of 4 Pages</h3>  
                 <h4>Any comments you want to leave?</h4>
-                <form>
+                <form onSubmit={(e) => handleNextButton(e)}>
                     <input 
                         type="text" 
                         placeholder="Comments go here"
@@ -32,11 +34,16 @@ export default function Comments() {
                         value={feedbackComments}
                     />
                     <br></br>
-                    <button onClick={handleNextButton}>
-                        Next
-                    </button>
                 </form>
             </div> 
+                    <Button 
+                        className="next-button"
+                        onClick={handleNextButton}
+                        variant="contained"
+                        color="primary"
+                    >
+                        Next
+                    </Button>
         </>
     )
 }

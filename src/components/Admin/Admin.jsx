@@ -30,7 +30,7 @@ export default function Admin() {
                 <thead>
                     <tr className='table-header-row'>
                         <th>
-                            
+
                         </th>
                         <th>
                             Feeling
@@ -48,7 +48,13 @@ export default function Admin() {
                     </tr>
                 </thead>
                 <tbody>
-                    {feedbackList.map(items => <AdminListItems key={items.id} items={items}/>)}
+                    {feedbackList.map(items => 
+                    <AdminListItems 
+                    key={items.id} 
+                    items={items} 
+                    fetch={fetchFeedbackItems} 
+                    />
+                    )}
                 </tbody>
             </table>
         </>
