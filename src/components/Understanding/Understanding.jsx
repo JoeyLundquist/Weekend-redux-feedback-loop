@@ -5,11 +5,12 @@ import { useHistory } from "react-router-dom";
 
 
 
+
 export default function Understanding() {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    const understandRating = useSelector(store => store.understandingRating)
+    const support = useSelector(store => store.supportedRating)
 
     const [understandingRating, setUnderstandingRating] = useState(0);
     const understanding = 'understandingRating'
@@ -19,6 +20,13 @@ export default function Understanding() {
         if(!understandingRating){
             alert('Value is needed to proceed')
             return
+        }
+        else if(support) {
+            dispatch({
+                type: "SET_UNDERSTANDING_RATING",
+                payload: Number(understandingRating)
+            })
+            history.push('/4')
         }
         else{
             dispatch({
@@ -41,7 +49,6 @@ export default function Understanding() {
                 <ScoreForm 
                 ratingName={understanding}
                 setRatingNumber={setUnderstandingRating}
-                reduxState={understandRating}
                 />
 
                 <button onClick={handleNextButton}>

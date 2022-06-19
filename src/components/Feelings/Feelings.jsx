@@ -6,14 +6,13 @@ import { useHistory } from "react-router-dom";
 
 
 export default function Feelings() {
-    const feeling = useSelector(store => store.feelingsRating)
+    const understanding = useSelector(store => store.understandingRating)
     const history = useHistory();
     const dispatch = useDispatch();
     const [feelingsRating, setFeelingsRating] = useState(0)
     const feelings = 'feelings-rating'
     
     const handleNextButton = () => {
-        console.log('Feelings rating?', feeling)
 
 
     
@@ -21,6 +20,13 @@ export default function Feelings() {
         if(!feelingsRating){
             alert('Value is needed to proceed')
             return
+        }
+        else if(understanding) {
+            dispatch({
+                type: "SET_FEELING_RATING",
+                payload: Number(feelingsRating)
+            })
+            history.push('/4')
         }
         else{
             dispatch({
@@ -38,11 +44,10 @@ export default function Feelings() {
             <div>
                 <h3> 1 of 4 Pages</h3>  
 
-                <h4>How are you feeling today</h4>
+                <h4>How are you feeling today?</h4>
                 <ScoreForm 
                 ratingName={feelings}
                 setRatingNumber={setFeelingsRating}
-                reduxState={feeling}
                 />
 
                 <button onClick={handleNextButton}>
