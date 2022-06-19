@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useHistory } from "react-router-dom";
 
 
+
 export default function Feelings() {
     const feeling = useSelector(store => store.feelingsRating)
     const history = useHistory();
@@ -13,17 +14,23 @@ export default function Feelings() {
     
     const handleNextButton = () => {
         console.log('Feelings rating?', feeling)
-        dispatch({
-            type: "SET_FEELING_RATING",
-            payload: Number(feelingsRating)
-        })
+
+
+    
 
         if(!feelingsRating){
             alert('Value is needed to proceed')
+            return
         }
         else{
+            dispatch({
+                type: "SET_FEELING_RATING",
+                payload: Number(feelingsRating)
+            })
             history.push('/1')
         }
+        
+    
     }
 
     return (

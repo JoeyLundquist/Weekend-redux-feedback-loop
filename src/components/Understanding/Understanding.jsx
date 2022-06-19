@@ -1,19 +1,33 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ScoreForm from "../ScoreForm/ScoreForm"
 import { useState } from "react"
+import { useHistory } from "react-router-dom";
 
 
 
 export default function Understanding() {
+    const history = useHistory();
     const dispatch = useDispatch();
+
+    const understandRating = useSelector(store => store.understandingRating)
+
     const [understandingRating, setUnderstandingRating] = useState(0);
     const understanding = 'understandingRating'
 
     const handleNextButton = () => {
-        dispatch({
-            type: "SET_UNDERSTANDING_RATING",
-            payload: Number(understandingRating)
-        })
+        
+        if(!understandingRating){
+            alert('Value is needed to proceed')
+            return
+        }
+        else{
+            dispatch({
+                type: "SET_UNDERSTANDING_RATING",
+                payload: Number(understandingRating)
+            })
+    
+            history.push('/2')
+        }
     }
 
     return (
@@ -27,6 +41,7 @@ export default function Understanding() {
                 <ScoreForm 
                 ratingName={understanding}
                 setRatingNumber={setUnderstandingRating}
+                reduxState={understandRating}
                 />
 
                 <button onClick={handleNextButton}>

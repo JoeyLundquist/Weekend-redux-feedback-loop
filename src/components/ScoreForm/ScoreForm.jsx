@@ -5,29 +5,29 @@ import './ScoreForm.css'
 export default function ScoreForm({ ratingName, setRatingNumber, reduxState }) {
     
     
-    let inputOne = false;
-    let inputTwo = false;
-    let inputThree = false;
-    let inputFour = false;
-    let inputFive = false;
+    // let inputOne = true;
+    // let inputTwo = false;
+    // let inputThree = false;
+    // let inputFour = false;
+    // let inputFive = false;
   
-    switch(reduxState){
-        case 1:
-            inputOne = true
-            break
-        case 2: 
-            inputTwo = true
-            break
-        case 3:
-            inputThree = true
-            break
-        case 4:
-            inputFour = true
-            break
-        case 5: 
-            inputFive = true
-            break
-    }
+    // switch(reduxState){
+    //     case 1:
+    //         inputOne = true
+    //         break
+    //     case 2: 
+    //         inputTwo = true
+    //         break
+    //     case 3:
+    //         inputThree = true
+    //         break
+    //     case 4:
+    //         inputFour = true
+    //         break
+    //     case 5: 
+    //         inputFive = true
+    //         break
+    // }
 
     const handleRatingChange = (evt) => {
         setRatingNumber(evt.target.value)
@@ -47,7 +47,7 @@ export default function ScoreForm({ ratingName, setRatingNumber, reduxState }) {
                             id="one"
                             name={ratingName}
                             value="1"
-                            defaultChecked={inputOne}
+                            // defaultChecked={inputOne}
                         />
                     </div>
                     <div className="radio-buttons">
@@ -58,7 +58,7 @@ export default function ScoreForm({ ratingName, setRatingNumber, reduxState }) {
                             id="one"
                             name={ratingName}
                             value="2"
-                            defaultChecked={inputTwo}
+                            // defaultChecked={inputTwo}
                         />
                     </div>
                     <div className="radio-buttons">
@@ -69,7 +69,7 @@ export default function ScoreForm({ ratingName, setRatingNumber, reduxState }) {
                             id="one"
                             name={ratingName}
                             value="3"
-                            defaultChecked={inputThree}
+                            // defaultChecked={inputThree}
                         />
                     </div>
                     <div className="radio-buttons">
@@ -80,7 +80,7 @@ export default function ScoreForm({ ratingName, setRatingNumber, reduxState }) {
                             id="one"
                             name={ratingName}
                             value="4"
-                            defaultChecked={inputFour}
+                            // defaultChecked={inputFour}
                         />
                     </div>
                     <div className="radio-buttons">
@@ -91,7 +91,7 @@ export default function ScoreForm({ ratingName, setRatingNumber, reduxState }) {
                             id="one"
                             name={ratingName}
                             value="5"
-                            defaultChecked={inputFive}
+                            // defaultChecked={inputFive}
                         />
                     </div>
                    
