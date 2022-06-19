@@ -1,5 +1,6 @@
+//Exporting reducer to store
 export default function understandingRating(state = 0, action) {
-    
+    //Switch statement to set state or clear state
     switch(action.type){
         case 'SET_UNDERSTANDING_RATING':
             return action.payload

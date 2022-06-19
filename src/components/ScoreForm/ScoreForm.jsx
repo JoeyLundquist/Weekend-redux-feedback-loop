@@ -1,15 +1,17 @@
+//Importing needed file
 import './ScoreForm.css'
 
 
-
+//Exporting Component, made to be used in the other components needing a 1 - 5 radio input for scores
 export default function ScoreForm({ ratingName, setRatingNumber }) {
-    
+    //Used to set rating number
     const handleRatingChange = (evt) => {
         setRatingNumber(evt.target.value)
         console.log(evt.target.value)
 
     }
 
+    //Whats being rendered
     return (
         <>
             <form onChange={handleRatingChange}>

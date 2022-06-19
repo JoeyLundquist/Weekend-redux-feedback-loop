@@ -1,17 +1,23 @@
+//Importing needed tools and file
 import { useSelector, useDispatch } from "react-redux"
-import axios from "axios"
 import { useHistory, Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
+import axios from "axios"
+
+//Exporting Component
 export default function ReviewFeedback() {
+    //Declaring tools
     const history = useHistory();
     const dispatch = useDispatch();
 
+    //Setting up needed state from redux store
     const feeling = useSelector(store => store.feelingsRating)
     const understanding = useSelector(store => store.understandingRating)
     const support = useSelector(store => store.supportedRating)
     const comments = useSelector(store => store.feedbackComments)
 
+    //Post route to add new feedback item to DB
     const onSubmit = () => {
 
         axios.post('/feedback', {feeling, understanding, support, comments})
@@ -27,6 +33,7 @@ export default function ReviewFeedback() {
             })
     }
 
+    //Whats being rendered
     return (
         <>
             <div className="container-for-feedback">
@@ -39,6 +46,8 @@ export default function ReviewFeedback() {
 
             </div>
            {
+            // If there is a value that is 0 it will display a disabled button incomplete button 
+            // instead of the submit button 
                 !feeling || !understanding || !support ?
                 <Button
                     id="incomplete-button"
@@ -54,7 +63,7 @@ export default function ReviewFeedback() {
                     variant="contained"
                     color="primary"
                 >
-                Submit
+                    Submit
                 </Button>
             } 
        

@@ -1,16 +1,20 @@
+//Importing needed tools
 import { useDispatch } from "react-redux";
 import { useState } from "react"
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
 
-
+//Exporting Component
 export default function Comments() {
+    //Declaring history needed tools
     const history = useHistory();
     const dispatch = useDispatch();
+
+    //Setting local state for setting up dispatch
     const [feedbackComments, setFeedbackComments] = useState('');
 
-
+    //Dispatches state to redux reducer and moves to next page
     const handleNextButton = (e) => {
         e.preventDefault();
         dispatch({
@@ -20,6 +24,7 @@ export default function Comments() {
         history.push('/4')
     }
 
+    //Whats being rendered in component
     return (
         <>
 
