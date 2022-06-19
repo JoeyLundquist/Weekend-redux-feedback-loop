@@ -14,9 +14,6 @@ export default function Feelings() {
     
     const handleNextButton = () => {
 
-
-    
-
         if(!feelingsRating){
             alert('Value is needed to proceed')
             return
@@ -35,8 +32,6 @@ export default function Feelings() {
             })
             history.push('/1')
         }
-        
-    
     }
 
     return (
@@ -46,8 +41,8 @@ export default function Feelings() {
 
                 <h4>How are you feeling today?</h4>
                 <ScoreForm 
-                ratingName={feelings}
-                setRatingNumber={setFeelingsRating}
+                    ratingName={feelings}
+                    setRatingNumber={setFeelingsRating}
                 />
 
                 <button onClick={handleNextButton}>

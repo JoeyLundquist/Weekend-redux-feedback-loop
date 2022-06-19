@@ -13,8 +13,6 @@ export default function ReviewFeedback() {
 
     const onSubmit = () => {
 
-
-
         axios.post('/feedback', {feeling, understanding, support, comments})
             .then((res) => {
                 console.log('Success', res)
@@ -31,6 +29,7 @@ export default function ReviewFeedback() {
     return (
         <>
             <h2>Review your Feedback</h2>
+            
             <p><Link to="/">Feelings:</Link> {feeling}</p>
             <p><Link to="/1">Understanding: </Link>{understanding}</p>
             <p><Link to="/2">Supported:</Link> {support}</p>

@@ -4,8 +4,6 @@ import { useState } from "react"
 import { useHistory } from "react-router-dom";
 
 
-
-
 export default function Understanding() {
     const history = useHistory();
     const dispatch = useDispatch();
@@ -40,15 +38,13 @@ export default function Understanding() {
 
     return (
         <>
-
-
             <div>
                 <h3> 2 of 4 Pages</h3>  
 
                 <h4>How well are you understanding the content?</h4>
                 <ScoreForm 
-                ratingName={understanding}
-                setRatingNumber={setUnderstandingRating}
+                    ratingName={understanding}
+                    setRatingNumber={setUnderstandingRating}
                 />
 
                 <button onClick={handleNextButton}>

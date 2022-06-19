@@ -21,26 +21,21 @@ export default function Comments() {
 
     return (
         <>
-
-
             <div>
                 <h3> 4 of 4 Pages</h3>  
-
                 <h4>Any comments you want to leave?</h4>
                 <form>
-                <input 
-                    type="text" 
-                    placeholder="Comments go here"
-                    onChange={e => setFeedbackComments(e.target.value)}
-                    value={feedbackComments}
-                />
-                <br></br>
-
-                <button onClick={handleNextButton}>
-                    Next
-                </button>
+                    <input 
+                        type="text" 
+                        placeholder="Comments go here"
+                        onChange={e => setFeedbackComments(e.target.value)}
+                        value={feedbackComments}
+                    />
+                    <br></br>
+                    <button onClick={handleNextButton}>
+                        Next
+                    </button>
                 </form>
-               
             </div> 
         </>
     )

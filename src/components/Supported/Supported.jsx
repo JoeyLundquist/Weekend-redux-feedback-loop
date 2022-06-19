@@ -40,8 +40,8 @@ export default function Supported() {
 
                 <h4>How well do you being supported?</h4>
                 <ScoreForm 
-                ratingName={supported}
-                setRatingNumber={setSupportedRating}
+                    ratingName={supported}
+                    setRatingNumber={setSupportedRating}
                 />
 
                 <button onClick={handleNextButton}>
