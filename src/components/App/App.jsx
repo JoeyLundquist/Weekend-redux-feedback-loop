@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { HashRouter as Router, Route} from "react-router-dom";
+
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
@@ -11,25 +13,37 @@ import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 function App() {
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1>
-        <h4>Don't forget it!</h4>
-      </header>
+    <Router>
+      <div className='App'>
+        <header className='App-header'>
+          <h1 className='App-title'>Feedback!</h1>
+          <h4>Don't forget it!</h4>
+        </header>
+        <Route path='/' exact>
+          <Feelings />
+        </Route>
 
-      <Feelings />
+        <Route path='/1' exact>
+          <Understanding />
+        </Route>
 
-      <Understanding />
+        <Route path='/2' exact>
+          <Supported />
+        </Route>
 
-      <Supported />
+        <Route path='/3' exact>
+          <Comments />
+        </Route>
 
-      <Comments />
+        <Route path='/4' exact>
+          <ReviewFeedback />
+        </Route>
 
-      <ThankYou />
-
-      <ReviewFeedback />
-
-    </div>
+        <Route path='/thankyou' exact>
+          <ThankYou />
+        </Route>
+      </div>
+    </Router>
   );
 }
 
