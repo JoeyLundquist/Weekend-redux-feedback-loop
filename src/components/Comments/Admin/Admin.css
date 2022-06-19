@@ -1,0 +1,11 @@
+.admin-table {
+    margin: 20px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 75%;
+}
+
+.admin-table th,td,tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
