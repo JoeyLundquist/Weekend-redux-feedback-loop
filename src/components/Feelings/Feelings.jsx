@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ScoreForm from "../ScoreForm/ScoreForm"
 import { useState } from "react"
 import { useHistory } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 
 
@@ -36,7 +37,7 @@ export default function Feelings() {
 
     return (
         <>
-            <div>
+            <div className="container-for-feedback">
                 <h3> 1 of 4 Pages</h3>  
 
                 <h4>How are you feeling today?</h4>
@@ -44,12 +45,15 @@ export default function Feelings() {
                     ratingName={feelings}
                     setRatingNumber={setFeelingsRating}
                 />
-
-                <button onClick={handleNextButton}>
-                    Next
-                </button>
-               
             </div>  
+            <Button
+                className="next-button" 
+                onClick={handleNextButton}
+                variant="contained"
+                color="primary"
+            >
+                Next
+            </Button>
         </>
     )
 

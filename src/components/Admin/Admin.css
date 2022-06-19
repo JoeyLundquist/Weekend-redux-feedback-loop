@@ -1,0 +1,21 @@
+.admin-table {
+    margin: 20px auto;
+    border: 2px solid blue;
+    border-collapse: collapse;
+    width: 75%;
+    
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+.table-header-row {
+    background-color: #dddddd;
+}
+
+.admin-table th,td,tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+

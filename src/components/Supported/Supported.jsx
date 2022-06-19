@@ -2,6 +2,7 @@ import ScoreForm from "../ScoreForm/ScoreForm"
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react"
 import { useHistory } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 export default function Supported() {
     const history = useHistory();
@@ -35,7 +36,7 @@ export default function Supported() {
 
     return (
         <>
-            <div>
+            <div className="container-for-feedback">
                 <h3> 3 of 4 Pages</h3>  
 
                 <h4>How well do you being supported?</h4>
@@ -43,12 +44,15 @@ export default function Supported() {
                     ratingName={supported}
                     setRatingNumber={setSupportedRating}
                 />
-
-                <button onClick={handleNextButton}>
-                    Next
-                </button>
-               
-            </div> 
+            </div>
+            <Button 
+                className="next-button"
+                onClick={handleNextButton}
+                variant="contained"
+                color="primary"
+            >
+                Next
+            </Button> 
         </>
     )
 }

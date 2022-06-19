@@ -21,3 +21,26 @@
 h4 {
   font-style: italic;
 }
+
+.container-for-feedback {
+  margin: 150px auto 75px auto;
+  border: 15px blue solid;
+  width: 25%;
+  height: 200px;
+  padding: 20px;
+  border-radius: 100px 50px;;
+}
+
+#incomplete-button {
+  border: 3px solid  red;
+  color: black
+}
+
+.next-button {
+  width: 100px;
+  height: 50px;
+}
+
+.flag-button {
+  color: red;
+}

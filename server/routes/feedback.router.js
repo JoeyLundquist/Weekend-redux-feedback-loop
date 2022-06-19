@@ -25,7 +25,69 @@ feedbackRouter.post('/', (req, res) => {
         })
 })
 
+feedbackRouter.get('/', (req, res) => {
+    const sqlQuery = `
+        SELECT * FROM feedback
+        ORDER BY id DESC;
+    `
 
+    pool.query(sqlQuery)
+        .then(dbRes => {
+            res.send(dbRes.rows)
+        })
+        .catch(err => {
+            console.log('Failed to GET feedback items', err)
+            res.sendStatus(500);
+        })
+})
+
+feedbackRouter.delete('/:id', (req, res) => {
+    // console.log(req.params.id)
+    const sqlQuery = `
+        DELETE FROM feedback
+        WHERE id = $1;
+    `
+
+    const sqlParams = [
+        req.params.id
+    ]
+
+    pool.query(sqlQuery, sqlParams)
+        .then(() => {
+            console.log('DELETE success')
+            res.sendStatus(200)
+        })
+        .catch(err => {
+            console.log('DELETE failed', err)
+            res.sendStatus(500)
+        })
+})
+
+feedbackRouter.put('/:id', (req, res) => {
+    const id = req.params.id
+    const flagged = req.body.flagged
+    // console.log ('flagged?', flagged)
+
+    const sqlQuery = `
+        UPDATE feedback
+        SET flagged = $1
+        WHERE id = $2;
+    `
+
+    const sqlParams = [
+        flagged,
+        id
+    ]
+
+    pool.query(sqlQuery, sqlParams)
+        .then(() => {
+            res.sendStatus(200)
+        })
+        .catch(err => {
+            console.log('PUT failed', err)
+            res.sendStatus(500)
+        })
+})
 
 
 module.exports = feedbackRouter
