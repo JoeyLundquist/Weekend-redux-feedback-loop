@@ -45,7 +45,7 @@ Admin
 
 ## Built with
 
-React
+React <br>
 Redux
 Node
 Express
