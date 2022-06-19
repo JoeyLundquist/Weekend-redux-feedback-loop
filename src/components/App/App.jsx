@@ -8,7 +8,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import ThankYou from '../ThankYou/ThankYou';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
-import Admin from '../Comments/Admin/Admin';
+import Admin from '../Admin/Admin';
 
 
 function App() {

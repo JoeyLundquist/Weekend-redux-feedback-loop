@@ -25,6 +25,22 @@ feedbackRouter.post('/', (req, res) => {
         })
 })
 
+feedbackRouter.get('/', (req, res) => {
+    const sqlQuery = `
+        SELECT * FROM feedback
+        ORDER BY id DESC;
+    `
+
+    pool.query(sqlQuery)
+        .then(dbRes => {
+            res.send(dbRes.rows)
+        })
+        .catch(err => {
+            console.log('Failed to GET feedback items', err)
+            res.sendStatus(500);
+        })
+})
+
 
 
 
