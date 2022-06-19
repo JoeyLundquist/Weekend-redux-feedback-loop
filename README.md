@@ -9,7 +9,7 @@ I created an app that can be used for feedback for how your feeling, your compre
 
 Its set up using for client, server, and database. Using the database to be able to have long term storage for the information.
 
-To see the fully functional site visit 
+To see the fully functional site visit : (https://shielded-inlet-46387.herokuapp.com/#/)
 
 ## Screen Shot
 ![feeling](ScreenShots/Screenshot1.png)
@@ -46,12 +46,12 @@ Admin
 ## Built with
 
 React <br>
-Redux
-Node
-Express
-Material UI
-Postgres
-Axios
+Redux <br>
+Node <br>
+Express <br>
+Material UI <br>
+Postgres<br>
+Axios<br>
 
 ## Acknowledgment 
 I really would like to thank [Prime Digital Academy](www.primeacademy.io). The amount of support and knowledge that is passed down to us is amazing. 
