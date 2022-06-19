@@ -19,16 +19,46 @@ export default function AdminListItems({items, fetch}) {
             })
     }
 
+    const flagFeedbackItem = () => {
+        const id = items.id
+        let flagged;
+        if(items.flagged) {
+            flagged = {flagged: false}
+        }
+        else{
+            flagged = {flagged: true}
+        }
+        console.log(flagged)
+
+        axios.put(`/feedback/${id}`, flagged)
+            .then(res => {
+                fetch()
+                console.log('Flag success')
+            })
+            .catch(err => {
+                console.log('Failed to flag', err)
+            })
+
+
+    }
+
 
     return (
         <>
             <tr>
                 <td>
-                    <button
-                        className="flag-button"
-                    >
-                        <FlagIcon />
-                    </button>
+                    {
+                        items.flagged ?
+                        <FlagIcon
+                            onClick={flagFeedbackItem}
+                            className="flag-button"
+                        />
+                        :
+                        <FlagIcon
+                            onClick={flagFeedbackItem}
+                        />
+                    }
+                   
                 </td>
                 <td>
                     {items.feeling}

@@ -42,7 +42,7 @@ feedbackRouter.get('/', (req, res) => {
 })
 
 feedbackRouter.delete('/:id', (req, res) => {
-    console.log(req.params.id)
+    // console.log(req.params.id)
     const sqlQuery = `
         DELETE FROM feedback
         WHERE id = $1;
@@ -63,6 +63,31 @@ feedbackRouter.delete('/:id', (req, res) => {
         })
 })
 
+feedbackRouter.put('/:id', (req, res) => {
+    const id = req.params.id
+    const flagged = req.body.flagged
+    // console.log ('flagged?', flagged)
+
+    const sqlQuery = `
+        UPDATE feedback
+        SET flagged = $1
+        WHERE id = $2;
+    `
+
+    const sqlParams = [
+        flagged,
+        id
+    ]
+
+    pool.query(sqlQuery, sqlParams)
+        .then(() => {
+            res.sendStatus(200)
+        })
+        .catch(err => {
+            console.log('PUT failed', err)
+            res.sendStatus(500)
+        })
+})
 
 
 module.exports = feedbackRouter
